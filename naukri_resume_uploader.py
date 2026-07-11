@@ -99,9 +99,9 @@ from playwright.sync_api import (
 # IMPORTANT: this file will contain your password in plain text if you fill
 # DEFAULT_PASSWORD in below. That's fine for a personal script on your own
 # machine, but don't commit this file to git or share it with anyone.
-DEFAULT_EMAIL = "santhosh09qa@gmail.com"          # e.g. "sandy@example.com"
-DEFAULT_PASSWORD = "Qaengineer@0902"       # e.g. "MyPassword123"
-DEFAULT_RESUME_PATH = r"D:\Naukri\Santhosh_QA_11_11.pdf"  # use r"..." for Windows paths
+# DEFAULT_EMAIL = "santhosh09qa@gmail.com"          # e.g. "sandy@example.com"
+# DEFAULT_PASSWORD = "Qaengineer@0902"       # e.g. "MyPassword123"
+# DEFAULT_RESUME_PATH = r"D:\Naukri\Santhosh_QA_11_11.pdf"  # use r"..." for Windows paths
 
 
 @dataclass(frozen=True)
@@ -118,9 +118,9 @@ class Config:
         # Environment variables (e.g. injected by Jenkins credentials) take
         # priority. The DEFAULT_* constants above are only used as a local
         # fallback when the corresponding env var isn't set.
-        email = os.environ.get("NAUKRI_EMAIL", DEFAULT_EMAIL)
-        password = os.environ.get("NAUKRI_PASSWORD", DEFAULT_PASSWORD)
-        resume_path_raw = os.environ.get("NAUKRI_RESUME_PATH", DEFAULT_RESUME_PATH)
+        email = os.environ.get("NAUKRI_EMAIL") #DEFAULT_EMAIL)
+        password = os.environ.get("NAUKRI_PASSWORD")# DEFAULT_PASSWORD)
+        resume_path_raw = os.environ.get("NAUKRI_RESUME_PATH") #DEFAULT_RESUME_PATH)
 
         missing = [
             name
@@ -280,7 +280,7 @@ class NaukriResumeUploader:
         self.logger.info(
             "Launching browser (headless=%s)...", self.config.headless
         )
-        browser = playwright.chromium.launch(headless=False)
+        browser = playwright.chromium.launch(headless=True)
         context = browser.new_context(
             viewport={"width": 1366, "height": 900},
             user_agent=(
