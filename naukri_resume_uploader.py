@@ -99,9 +99,9 @@ from playwright.sync_api import (
 # IMPORTANT: this file will contain your password in plain text if you fill
 # DEFAULT_PASSWORD in below. That's fine for a personal script on your own
 # machine, but don't commit this file to git or share it with anyone.
-# DEFAULT_EMAIL = "santhosh09qa@gmail.com"          # e.g. "sandy@example.com"
-# DEFAULT_PASSWORD = "Qaengineer@0902"       # e.g. "MyPassword123"
-# DEFAULT_RESUME_PATH = r"D:\Naukri\Santhosh_QA_11_11.pdf"  # use r"..." for Windows paths
+DEFAULT_EMAIL = "santhosh09qa@gmail.com"          # e.g. "sandy@example.com"
+DEFAULT_PASSWORD = "Qaengineer@0902"       # e.g. "MyPassword123"
+DEFAULT_RESUME_PATH = r"D:\Naukri\Santhosh_QA_11_11.pdf"  # use r"..." for Windows paths
 
 
 @dataclass(frozen=True)
